@@ -1,31 +1,29 @@
 package com.example.venus_muzian
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.venus_muzian.databinding.ActivityMainBinding
 import com.example.venus_muzian.pertemuan_4.FourthActivity
+import com.example.venus_muzian.pertemuan_5.FifthActivity
 
-class MainActivity : Activity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnToFourth = findViewById<Button>(R.id.btnToFourth)
+        binding.btnToFourth.setOnClickListener {
+            val intent = Intent(this, FourthActivity::class.java)
+            startActivity(intent)
+        }
 
-        btnToFourth.setOnClickListener {
-
-            val intent = Intent(
-                this,
-                FourthActivity::class.java
-            )
-
-            intent.putExtra("name", "Politeknik Caltex Riau")
-            intent.putExtra("from", "Rumbai")
-            intent.putExtra("age", 25)
-
+        binding.btnToFifth.setOnClickListener {
+            val intent = Intent(this, FifthActivity::class.java)
             startActivity(intent)
         }
     }
