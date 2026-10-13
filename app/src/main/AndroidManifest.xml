@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Venus_muzian">
 
+        <!-- Pertemuan 2 -->
+        <activity
+            android:name=".pertemuan_2.SecondActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- Pertemuan 3 -->
         <activity
             android:name=".pertemuan_3.ThirdActivity"
@@ -19,21 +25,6 @@
             android:theme="@style/Theme.Venus_muzian"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Pertemuan 2 -->
-        <activity
-            android:name=".pertemuan_2.SecondActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- Main Activity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:label="venus_muzian"
-            android:theme="@style/Theme.Venus_muzian"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- Pertemuan 3 -->
         <activity
             android:name=".pertemuan_3.ThirdResultActivity"
             android:exported="false"
@@ -50,12 +41,29 @@
             android:name=".pertemuan_5.FifthActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".pertemuan_5.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Pertemuan 6 -->
         <activity
             android:name=".pertemuan_6.SixthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="venus_muzian"
+            android:theme="@style/Theme.Venus_muzian"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Base Activity: Bottom Navigation -->
+        <activity
+            android:name=".BaseActivity"
             android:exported="false" />
 
         <!-- Login -->
@@ -66,18 +74,19 @@
             android:theme="@style/Theme.Venus_muzian"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Splash Screen menjadi halaman pertama -->
+        <!-- Splash Screen: halaman pertama aplikasi -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:label="venus_muzian"
             android:theme="@style/Theme.Venus_muzian"
             android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
     </application>

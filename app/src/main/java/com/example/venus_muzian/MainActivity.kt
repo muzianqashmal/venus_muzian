@@ -1,10 +1,12 @@
 
 package com.example.venus_muzian
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.example.venus_muzian.Home.HomeFragment
+import com.example.venus_muzian.Message.MessageFragment
+import com.example.venus_muzian.More.MoreFragment
 import com.example.venus_muzian.databinding.ActivityMainBinding
 import com.example.venus_muzian.pertemuan_4.FourthActivity
 import com.example.venus_muzian.pertemuan_5.FifthActivity
@@ -20,51 +22,37 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tombol Pertemuan 4
-        binding.btnToFourth.setOnClickListener {
-            val intent = Intent(this, FourthActivity::class.java)
-            startActivity(intent)
+        if (savedInstanceState == null) {
+            replaceFragment(HomeFragment())
         }
 
-        // Tombol Pertemuan 5
-        binding.btnToFifth.setOnClickListener {
-            val intent = Intent(this, FifthActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Tombol Pertemuan 6 - Fragment
-        binding.btnPertemuan6.setOnClickListener {
-            val intent = Intent(this, SixthActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Tombol Logout
-        binding.btnLogout.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Apakah Anda yakin ingin keluar?")
-                .setNegativeButton("Tidak", null)
-                .setPositiveButton("Ya") { dialog, _ ->
-
-                    // Ambil SharedPreferences
-                    val sharedPref = getSharedPreferences(
-                        "user_pref",
-                        MODE_PRIVATE
-                    )
-
-                    // Hapus data login
-                    val editor = sharedPref.edit()
-                    editor.clear()
-                    editor.apply()
-
-                    // Kembali ke halaman Login
-                    val intent = Intent(this, AuthActivity::class.java)
-                    startActivity(intent)
-                    finish()
-
-                    dialog.dismiss()
+        binding.bottomNavView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    replaceFragment(HomeFragment())
+                    true
                 }
-                .show()
+
+                R.id.message -> {
+                    replaceFragment(MessageFragment())
+                    true
+                }
+
+                R.id.more -> {
+                    replaceFragment(MoreFragment())
+                    true
+                }
+
+                else -> false
+            }
         }
+
+        binding.bottomNavView.selectedItemId = R.id.home
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }
