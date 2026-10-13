@@ -1,3 +1,4 @@
+
 package com.example.venus_muzian
 
 import android.content.Intent
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.venus_muzian.databinding.ActivityMainBinding
 import com.example.venus_muzian.pertemuan_4.FourthActivity
 import com.example.venus_muzian.pertemuan_5.FifthActivity
+import com.example.venus_muzian.pertemuan_6.SixthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,19 +20,26 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Tombol Pertemuan 4
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             startActivity(intent)
         }
 
+        // Tombol Pertemuan 5
         binding.btnToFifth.setOnClickListener {
             val intent = Intent(this, FifthActivity::class.java)
             startActivity(intent)
         }
 
+        // Tombol Pertemuan 6 - Fragment
+        binding.btnPertemuan6.setOnClickListener {
+            val intent = Intent(this, SixthActivity::class.java)
+            startActivity(intent)
+        }
+
         // Tombol Logout
         binding.btnLogout.setOnClickListener {
-
             AlertDialog.Builder(this)
                 .setTitle("Logout")
                 .setMessage("Apakah Anda yakin ingin keluar?")

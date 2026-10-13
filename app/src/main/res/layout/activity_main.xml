@@ -30,11 +30,10 @@
         android:text="Pertemuan 4"
         android:textStyle="bold"
         android:backgroundTint="#FF9800"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.500" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp" />
 
     <Button
         android:id="@+id/btnToFifth"
@@ -43,13 +42,24 @@
         android:text="Pertemuan 5"
         android:textStyle="bold"
         android:backgroundTint="#FF9800"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnToFourth"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
 
-    <!-- Tombol Logout -->
+    <Button
+        android:id="@+id/btnPertemuan6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pertemuan 6 - Fragment"
+        android:textStyle="bold"
+        android:backgroundTint="#FF9800"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnToFifth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
@@ -58,10 +68,9 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:backgroundTint="#D32F2F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPertemuan6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
