@@ -24,5 +24,6 @@ class TutorialMessageActivity : AppCompatActivity() {
         binding.tutorialMessageViewPager.adapter = adapter
 
         binding.dotIndicator.attachTo(binding.tutorialMessageViewPager)
+
     }
 }
