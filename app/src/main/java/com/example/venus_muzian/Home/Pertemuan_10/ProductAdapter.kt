@@ -11,7 +11,7 @@ class ProductAdapter(
     private val onItemClick: (ProductModel) -> Unit
 ) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
-    inner class ProductViewHolder(val binding: ItemProductBinding)
+    class ProductViewHolder(val binding: ItemProductBinding)
         : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
