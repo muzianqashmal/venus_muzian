@@ -12,6 +12,7 @@ import com.example.venus_muzian.databinding.FragmentHomeBinding
 import com.example.venus_muzian.pertemuan_4.FourthActivity
 import com.example.venus_muzian.pertemuan_5.FifthActivity
 import com.example.venus_muzian.pertemuan_6.SixthActivity
+import com.example.venus_muzian.Home.pertemuan_10.TenthActivity
 
 class HomeFragment : Fragment() {
 
@@ -23,6 +24,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentHomeBinding.inflate(
             inflater,
             container,
@@ -49,6 +51,13 @@ class HomeFragment : Fragment() {
         binding.btnPertemuan6.setOnClickListener {
             startActivity(
                 Intent(requireContext(), SixthActivity::class.java)
+            )
+        }
+
+        // Tombol Pertemuan 10
+        binding.btnPertemuan10.setOnClickListener {
+            startActivity(
+                Intent(requireContext(), TenthActivity::class.java)
             )
         }
 
